@@ -48,7 +48,7 @@ int main() {
             cout <<endl<< "Input column and row cards (all with space): ";
             int col1, col2, l1, l2;
             string par1, par2, let1, let2;
-            cin >> l1 >> col1 >> l2 > col2;
+            cin >> l1 >> col1 >> l2 >> col2;
             l1--;
             l2--;
             col1--;
