@@ -8,7 +8,7 @@ string red = "\033[31m";
 string green = "\033[32m";
 string zero = "\033[0m";
 void PrintX(string pole2[5][6]) {
-    cout << "Guess paru\n";
+    cout<< endl << "Game Memory\n" << endl ;
     cout << "  1 2 3 4 5 6\n";
     for (short i = 0; i < 5; i++) {
         cout << char('A' + i) << ' ';
@@ -29,10 +29,10 @@ int main() {
         for (short i = 0; i < 30; i++) {
             cout << sym[i] << " ";
         }
-        cout << "\nRemember paru: \n";
+        cout <<endl<< "\nGame Memory\n" << endl;
         cout << "  1 2 3 4 5 6\n";
         for (short i = 0; i < 5; i++) {
-            cout << char('A' + i) << ' ';
+            cout << 1 + i << ' ';
             for (short k = 0; k < 6; k++) {
                 pole[i][k] = sym[i * 6 + k];
                 cout << pole[i][k] << " ";
@@ -45,10 +45,10 @@ int main() {
             Sleep(4000);
             system("cls");
             PrintX(pole2);
-            cout << "Input leter's number(A=1,B=2,C=3,D=4,E=5) and number first card and second(with space): ";
+            cout <<endl<< "Input column and row cards (all with space): ";
             int col1, col2, l1, l2;
             string par1, par2, let1, let2;
-            cin >> l1 >> col1 >> l2 >> col2;
+            cin >> l1 >> col1 >> l2 > col2;
             l1--;
             l2--;
             col1--;
@@ -56,9 +56,9 @@ int main() {
             flips++;
             if (pole[l1][col1] == pole[l2][col2]) {
                 count++;
-                cout << "  1 2 3 4 5 6\n";
+                cout<<endl << "  1 2 3 4 5 6\n";
                 for (short i = 0; i < 5; i++) {
-                    cout << char('A' + i) << ' ';
+                    cout <<  1 + i << ' ';
                     for (short k = 0; k < 6; k++) {
                         if ((i == l1 && k == col1) || (i == l2 && k == col2)) {
                             pole2[i][k] = green + pole[i][k] + " ";
@@ -72,10 +72,10 @@ int main() {
             }
             else if (pole[l1][col1] != pole[l2][col2]) {
                 for (short i = 0; i < 5; i++) {
-                    if (i == l1) let1 = 'A' + i;
-                    if (i == l2) let2 = 'A' + i;
+                    if (i == l1) let1 = 1 + i;
+                    if (i == l2) let2 = 1 + i;
                 }
-                cout << let1 << col1 + 1 << ") " << pole[l1][col1] << " " << let2 << col2 + 1 << ") " << pole[l2][col2] << endl;
+                cout <<endl<< let1 << col1 + 1 << ") " << pole[l1][col1] << " " << let2 << col2 + 1 << ") " << pole[l2][col2]<<endl;
                 PrintX(pole2);
             }
         } while (count < 15);
