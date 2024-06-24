@@ -11,7 +11,7 @@ void PrintX(string pole2[5][6]) {
     cout<< endl << "Game Memory\n" << endl ;
     cout << "  1 2 3 4 5 6\n";
     for (short i = 0; i < 5; i++) {
-        cout << char('A' + i) << ' ';
+        cout <<  i + 1 << ' ';
         for (short k = 0; k < 6; k++) {
             cout << pole2[i][k] << zero;
         }
@@ -47,7 +47,7 @@ int main() {
             PrintX(pole2);
             cout <<endl<< "Input column and row cards (all with space): ";
             int col1, col2, l1, l2;
-            string par1, par2, let1, let2;
+            string par1, par2;
             cin >> l1 >> col1 >> l2 >> col2;
             l1--;
             l2--;
@@ -71,12 +71,8 @@ int main() {
                 }
             }
             else if (pole[l1][col1] != pole[l2][col2]) {
-                for (short i = 0; i < 5; i++) {
-                    if (i == l1) let1 = 1 + i;
-                    if (i == l2) let2 = 1 + i;
-                }
-                cout <<endl<< let1 << col1 + 1 << ") " << pole[l1][col1] << " " << let2 << col2 + 1 << ") " << pole[l2][col2]<<endl;
-                PrintX(pole2);
+                cout <<endl<< "First number row, second column: " << endl;
+                cout <<endl<<l1 + 1 << col1 + 1 << ") " << pole[l1][col1]<< " " << l2 + 1 << col2 + 1 << ") " << pole[l2][col2] << endl;
             }
         } while (count < 15);
         auto endPlayer = chrono::steady_clock::now();
