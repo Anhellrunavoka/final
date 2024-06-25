@@ -45,7 +45,7 @@ int main() {
             Sleep(4000);
             system("cls");
             PrintX(pole2);
-            cout <<endl<< "Input column and row cards (all with space): ";
+            cout <<endl<< "Input row and column cards (all with space): ";
             int col1, col2, l1, l2;
             string par1, par2;
             cin >> l1 >> col1 >> l2 >> col2;
